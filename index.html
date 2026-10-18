@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Demonstração pública de painel de gestão escolar com dados fictícios."
+    />
+    <meta name="theme-color" content="#171a32" />
+    <title>PalcoFlow | Demonstração de portfólio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Pular para o conteúdo</a>
+    <div class="demo-banner">
+      Ambiente demonstrativo · Dados 100% fictícios · Nenhuma ação altera o
+      sistema real
+    </div>
+    <div class="shell">
+      <aside id="sidebar" class="sidebar">
+        <a href="#inicio" class="brand" aria-label="PalcoFlow Demo, início"
+          ><span class="brand-icon">✦</span
+          ><span
+            >Palco<span class="brand-accent">Flow</span
+            ><small>PORTFÓLIO DEMO</small></span
+          ></a
+        >
+        <p class="nav-label">ESPAÇO DE GESTÃO</p>
+        <nav aria-label="Menu principal">
+          <button type="button" class="nav-item active" data-view="overview">
+            <span aria-hidden="true">◫</span> Visão geral</button
+          ><button type="button" class="nav-item" data-view="students">
+            <span aria-hidden="true">♙</span> Alunos</button
+          ><button type="button" class="nav-item" data-view="classes">
+            <span aria-hidden="true">▦</span> Turmas</button
+          ><button type="button" class="nav-item" data-view="finance">
+            <span aria-hidden="true">◉</span> Financeiro</button
+          ><button type="button" class="nav-item" data-view="recovery">
+            <span aria-hidden="true">↗</span> Recuperação
+          </button>
+        </nav>
+        <div class="side-note">
+          <strong>Projeto demonstrativo</strong>
+          <p>Sem login, banco de dados, pagamentos ou mensagens.</p>
+        </div>
+      </aside>
+      <main id="main" class="main" tabindex="-1">
+        <header class="topbar">
+          <button
+            type="button"
+            id="menu-button"
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+          >
+            ☰</button
+          ><span class="crumb"
+            >Painel <span>/</span>
+            <strong id="view-label">Visão geral</strong></span
+          >
+          <div class="profile">
+            <span class="status-dot"></span> Escola Exemplo
+            <span class="avatar">E</span>
+          </div>
+        </header>
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">PAINEL DEMONSTRATIVO</p>
+              <h1 id="page-title">Bem-vindo ao seu painel.</h1>
+              <p id="page-subtitle">
+                Uma visão clara das rotinas para organizar o dia a dia da
+                escola.
+              </p>
+            </div>
+            <span class="fake-data-pill">DADOS FICTÍCIOS</span>
+          </div>
+          <section id="overview-view" class="view" aria-label="Visão geral">
+            <div class="stat-grid">
+              <article class="stat">
+                <span>Alunos de exemplo</span
+                ><strong id="stat-students">0</strong
+                ><small>Registros simulados</small>
+              </article>
+              <article class="stat">
+                <span>Turmas de exemplo</span
+                ><strong id="stat-classes">0</strong
+                ><small>Organizadas no painel</small>
+              </article>
+              <article class="stat">
+                <span>Mensalidades em aberto</span
+                ><strong id="stat-open">0</strong
+                ><small>Simulação, sem cobrança</small>
+              </article>
+              <article class="stat">
+                <span>Contatos para revisar</span
+                ><strong id="stat-recovery">0</strong
+                ><small>Nenhuma mensagem é enviada</small>
+              </article>
+            </div>
+            <div class="overview-grid">
+              <div class="panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="eyebrow">ACOMPANHAMENTO</p>
+                    <h2>Panorama de turmas</h2>
+                  </div>
+                  <button type="button" class="text-button" data-view="classes">
+                    Ver turmas →
+                  </button>
+                </div>
+                <div id="overview-classes"></div>
+              </div>
+              <div class="panel next-steps">
+                <p class="eyebrow">UMA ROTINA MAIS CLARA</p>
+                <h2>Informações no lugar certo.</h2>
+                <p>
+                  Este painel reúne módulos que normalmente ficam dispersos:
+                  alunos, turmas, situação financeira e acompanhamento de
+                  contatos.
+                </p>
+                <button type="button" data-view="students">
+                  Explorar registros fictícios →
+                </button>
+              </div>
+            </div>
+          </section>
+          <section id="students-view" class="view hidden" aria-label="Alunos">
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">CADASTRO</p>
+                  <h2>Alunos de demonstração</h2>
+                </div>
+                <label class="search"
+                  ><span>Buscar aluno</span
+                  ><input
+                    id="student-search"
+                    type="search"
+                    placeholder="Ex.: Aluno 002"
+                /></label>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Aluno</th>
+                      <th scope="col">Turma</th>
+                      <th scope="col">Situação</th>
+                      <th scope="col">Mensalidade</th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-rows"></tbody>
+                </table>
+              </div>
+              <p id="students-empty" class="empty hidden">
+                Nenhum aluno fictício encontrado.
+              </p>
+            </div>
+          </section>
+          <section id="classes-view" class="view hidden" aria-label="Turmas">
+            <div class="class-grid" id="class-grid"></div>
+          </section>
+          <section
+            id="finance-view"
+            class="view hidden"
+            aria-label="Financeiro"
+          >
+            <div class="warning">
+              Valores apenas ilustrativos. Não há geração de cobranças,
+              pagamentos ou conexão bancária.
+            </div>
+            <div class="stat-grid finance-stats">
+              <article class="stat">
+                <span>Previsto neste exemplo</span
+                ><strong id="finance-total">R$ 0</strong
+                ><small>Soma simulada</small>
+              </article>
+              <article class="stat">
+                <span>Marcado como recebido</span
+                ><strong id="finance-paid">R$ 0</strong
+                ><small>Situação fictícia</small>
+              </article>
+              <article class="stat">
+                <span>Marcado como pendente</span
+                ><strong id="finance-pending">R$ 0</strong
+                ><small>Situação fictícia</small>
+              </article>
+            </div>
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">COMPETÊNCIA EXEMPLO</p>
+                  <h2>Visão de mensalidades</h2>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Referência</th>
+                      <th scope="col">Turma</th>
+                      <th scope="col">Valor fictício</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="finance-rows"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section
+            id="recovery-view"
+            class="view hidden"
+            aria-label="Recuperação"
+          >
+            <div class="warning">
+              Fluxo ilustrativo: não há números de telefone, WhatsApp, disparos
+              automáticos nem dados de alunos reais.
+            </div>
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">ACOMPANHAMENTO MANUAL</p>
+                  <h2>Contatos para revisar</h2>
+                </div>
+                <span class="list-count" id="recovery-count"></span>
+              </div>
+              <div
+                class="filter-row"
+                role="group"
+                aria-label="Filtrar contatos"
+              >
+                <button
+                  class="active"
+                  type="button"
+                  data-recovery-filter="Todos"
+                  aria-pressed="true"
+                >
+                  Todos</button
+                ><button
+                  type="button"
+                  data-recovery-filter="Mensalidade"
+                  aria-pressed="false"
+                >
+                  Mensalidade</button
+                ><button
+                  type="button"
+                  data-recovery-filter="Participação"
+                  aria-pressed="false"
+                >
+                  Participação
+                </button>
+              </div>
+              <div id="recovery-list"></div>
+            </div>
+          </section>
+        </div>
+        <footer class="footer">
+          PalcoFlow Demo · Interface de portfólio independente do ambiente de
+          produção
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
