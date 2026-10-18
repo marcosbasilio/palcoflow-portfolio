@@ -20,42 +20,42 @@ const classes = [
 ];
 const students = [
   {
-    id: "Aluno Demo 001",
+    id: "Aluno Fictício 001",
     classId: "A1",
     state: "Ativo",
     payment: "Pago",
     amount: 180,
   },
   {
-    id: "Aluno Demo 002",
+    id: "Aluno Fictício 002",
     classId: "A1",
     state: "Ativo",
     payment: "Pendente",
     amount: 180,
   },
   {
-    id: "Aluno Demo 003",
+    id: "Aluno Fictício 003",
     classId: "B2",
     state: "Ativo",
     payment: "Pago",
     amount: 210,
   },
   {
-    id: "Aluno Demo 004",
+    id: "Aluno Fictício 004",
     classId: "B2",
     state: "Experimental",
     payment: "Não se aplica",
     amount: 0,
   },
   {
-    id: "Aluno Demo 005",
+    id: "Aluno Fictício 005",
     classId: "C3",
     state: "Ativo",
     payment: "Pendente",
     amount: 160,
   },
   {
-    id: "Aluno Demo 006",
+    id: "Aluno Fictício 006",
     classId: "C3",
     state: "Ativo",
     payment: "Pago",
@@ -64,17 +64,17 @@ const students = [
 ];
 const contacts = [
   {
-    ref: "Contato Demo 001",
+    ref: "Contato Fictício 001",
     type: "Mensalidade",
     context: "Revisar situação de pagamento no exemplo.",
   },
   {
-    ref: "Contato Demo 002",
+    ref: "Contato Fictício 002",
     type: "Participação",
     context: "Entender interesse em uma turma fictícia.",
   },
   {
-    ref: "Contato Demo 003",
+    ref: "Contato Fictício 003",
     type: "Mensalidade",
     context: "Confirmar uma informação do cadastro fictício.",
   },
@@ -204,7 +204,7 @@ const pages = {
   students: [
     "Alunos",
     "Cadastros organizados.",
-    "Encontre rapidamente os registros fictícios desta demonstração.",
+    "Encontre rapidamente os registros fictícios desta versão.",
   ],
   classes: [
     "Turmas",
@@ -214,7 +214,7 @@ const pages = {
   finance: [
     "Financeiro",
     "Visão financeira sem ruído.",
-    "Valores ilustrativos para demonstrar organização e status.",
+    "Valores ilustrativos para apresentar organização e status.",
   ],
   recovery: [
     "Recuperação",
